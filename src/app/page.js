@@ -1,5 +1,5 @@
 "use client"
-import Image from 'next/image'
+import ProductCard from './ProductCard'
 
 export default function Home() {
   const productList = [
@@ -121,6 +121,13 @@ export default function Home() {
       <div className="container flex flex-col items-center justify-center">
           <p className="text-3xl font-bold mb-2">Best Seller Gaming PC</p>
           <p className="text-xl font-semibold mb-2">Prebuild & Customs</p>
+      </div>
+      <div className="container mx-auto mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {productList.map(product => (
+                  <ProductCard key={product.id} product={product} />
+              ))}
+          </div>
       </div>
     </main>
   )
