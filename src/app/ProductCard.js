@@ -1,4 +1,6 @@
+'use client'
 import { useMemo } from 'react'
+import AffirmLogo from './images/icon-affirm.svg'
 
 const ProductCard = ({ product }) => {
     const discount = useMemo(() => product.originalPrice - product.salePrice, [product.originalPrice, product.salePrice])
@@ -41,8 +43,9 @@ const ProductCard = ({ product }) => {
                   <span className='text-3xl font-bold'>${product.salePrice.toLocaleString()}</span>
                   <span className='text-gray-500 line-through ml-4'>${product.originalPrice.toLocaleString()}</span>
                 </div>
-              <div className='flex pt-1'>
+              <div className='flex pt-1 items-center'>
                 <span>Starting at ${product.affirmMonthlyPay.toLocaleString()}/mo with</span>
+                <img width='55' height='20' src={AffirmLogo.src}/>
               </div>
               <div className='flex justify-between mt-6'>
                 <div className='flex flex-col'>
