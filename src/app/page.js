@@ -1,5 +1,5 @@
 "use client"
-import ProductCard from './ProductCard'
+import ProductCard from './components/ProductCard'
 
 export default function Home() {
   const productList = [

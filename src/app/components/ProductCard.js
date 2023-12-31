@@ -1,6 +1,6 @@
 'use client'
 import { useMemo } from 'react'
-import AffirmLogo from './images/icon-affirm.svg'
+import AffirmLogo from '../images/icon-affirm.svg'
 
 const ProductCard = ({ product }) => {
     const discount = useMemo(() => product.originalPrice - product.salePrice, [product.originalPrice, product.salePrice])
