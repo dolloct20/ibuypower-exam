@@ -50,8 +50,9 @@ const ProductCard = ({ product }) => {
               </div>
               <div className='flex justify-between mt-6'>
                 <div className='flex flex-col'>
-                  <p className='font-semibold'>Free Shipping</p>
-                  <p>Estimate Ship By 01/16/2024</p>
+                  <p className='font-bold'>Free Shipping</p>
+                  <p>Estimate Ship By</p>
+                  <p className='text-gray-600'>01/16/2024</p>
                 </div>
                 <div className='flex items-center'>
                   <ProductBtn key={product.id} product={product} />
