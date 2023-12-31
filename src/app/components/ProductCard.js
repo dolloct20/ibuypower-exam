@@ -1,6 +1,7 @@
 'use client'
 import { useMemo } from 'react'
 import AffirmLogo from '../images/icon-affirm.svg'
+import ProductBtn from '../components/ProductCardBtn'
 
 const ProductCard = ({ product }) => {
     const discount = useMemo(() => product.originalPrice - product.salePrice, [product.originalPrice, product.salePrice])
@@ -51,6 +52,9 @@ const ProductCard = ({ product }) => {
                 <div className='flex flex-col'>
                   <p className='font-semibold'>Free Shipping</p>
                   <p>Estimate Ship By 01/16/2024</p>
+                </div>
+                <div className='flex items-center'>
+                  <ProductBtn key={product.id} product={product} />
                 </div>
               </div>
             </div>
