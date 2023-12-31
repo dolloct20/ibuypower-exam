@@ -1,7 +1,13 @@
 "use client"
+import { useState } from 'react'
 import ProductCard from './components/ProductCard'
+import PaginationBtn from './components/PaginationBtn'
 
 export default function Home() {
+  const [displayedProductList, setDisplayedProductList] = useState([])
+  const updateProductList = (list) => {
+      setDisplayedProductList(list)
+  }
   const productList = [
       {
           id: '000001',
@@ -122,9 +128,10 @@ export default function Home() {
           <p className="text-3xl font-bold mb-2">Best Seller Gaming PC</p>
           <p className="text-xl font-semibold mb-2">Prebuild & Customs</p>
       </div>
+      <PaginationBtn updateProductList={updateProductList} productList={productList} />
       <div className="container mx-auto mt-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {productList.map(product => (
+              {displayedProductList.map(product => (
                   <ProductCard key={product.id} product={product} />
               ))}
           </div>
